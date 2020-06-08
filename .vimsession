@@ -11,7 +11,7 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit ~/projects/socket_programming/.gitignore
+edit ~/projects/socket_programming/README.md
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -29,13 +29,15 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 50 - ((30 * winheight(0) + 17) / 34)
+let s:l = 1 - ((0 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-50
-normal! 0
+1
+normal! 018|
 tabnext 1
+badd +1 ~/projects/socket_programming/README.md
+badd +50 ~/projects/socket_programming/.gitignore
 badd +19 ~/projects/socket_programming/src/TaskThread.cpp
 badd +30 ~/projects/socket_programming/src/main.cpp
 badd +8 ~/projects/socket_programming/src/Thread.h
@@ -45,7 +47,6 @@ badd +5 ~/projects/socket_programming/src/Socket.h
 badd +9 ~/projects/socket_programming/src/Socket.cpp
 badd +6 ~/projects/socket_programming/src/TcpSocket.cpp
 badd +4 ~/projects/socket_programming/src/Thread.cpp
-badd +0 ~/projects/socket_programming/.gitignore
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
